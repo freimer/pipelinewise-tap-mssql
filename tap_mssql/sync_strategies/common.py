@@ -22,8 +22,8 @@ def escape(string):
     return '"' + string + '"'
 
 
-def generate_tap_stream_id(table_schema, table_name):
-    return table_schema + "_" + table_name
+def generate_tap_stream_id(table_schema, table_name, table_prefix=None, sep='-'):
+    return sep.join([x for x in [table_prefix, table_schema, table_name] if type(x) is str])
 
 
 def get_stream_version(tap_stream_id, state):
