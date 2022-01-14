@@ -23,7 +23,7 @@ def escape(string):
 
 
 def generate_tap_stream_id(table_schema, table_name):
-    return table_schema + "-" + table_name
+    return table_schema + "_" + table_name
 
 
 def get_stream_version(tap_stream_id, state):
