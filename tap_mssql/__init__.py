@@ -105,7 +105,8 @@ def schema_for_column(c):
 
     elif data_type in ["decimal", "numeric"]:
         result.type = ["null", "number"]
-        result.multipleOf = 10 ** (0 - c.numeric_scale)
+        # Causes problems, ignore
+        # result.multipleOf = 10 ** (0 - c.numeric_scale)
         return result
 
     elif data_type in STRING_TYPES:
