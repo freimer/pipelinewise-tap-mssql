@@ -258,7 +258,7 @@ def discover_catalog(mssql_conn, config):
                 tap_stream_id=common.generate_tap_stream_id(table_schema, 
                                                             table_name,
                                                             table_prefix=config.get('table_prefix'), 
-                                                            sep=config.get('table_sep')),
+                                                            sep=config.get('table_sep', '-')),
                 schema=schema,
             )
 
